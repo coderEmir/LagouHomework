@@ -1,7 +1,9 @@
 const TerserPlugin = require('terser-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-var Merge = require('webpack-merge')
-module.exports = Merge(CommonConfig, {
+var {merge} = require('webpack-merge')
+const CommonConfig = require('./webpack.common')
+module.exports = CommonConfig
+module.exports = merge(CommonConfig, {
     optimization: {
         minimize: true,
         minimizer: [new TerserPlugin()],

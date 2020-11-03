@@ -34,12 +34,6 @@ var CommonConfig = {
                 }
             },
             {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                use: "eslint-loader",
-                enforce: "pre"
-            },
-            {
                 test: /\.css$/,
                 use: [
                     'style-loader',
