@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+</head>
+<body>
+    
+    <ul>
+        <% users.forEach(function(user){ %>
+            <% - include('user/show', { user: user }) %>
+        <% }); %>
+    </ul>
+    <script>
+    let ejs = require('ejs'),
+    users = ['geddy', 'neil', 'alex'];
+
+    // Just one template
+    ejs.render('<p>[?= users.join(" | "); ?]</p>', {users: users}, {delimiter: '?', openDelimiter: '[', closeDelimiter: ']'});
+    // => '<p>geddy | neil | alex</p>'
+
+    // Or globally
+    ejs.delimiter = '?';
+    ejs.openDelimiter = '[';
+    ejs.closeDelimiter = ']';
+    ejs.render('<p>[?= users.join(" | "); ?]</p>', {users: users});
+    </script>
+</body>
+</html>

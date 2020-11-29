@@ -17,7 +17,7 @@
 - 新旧VNode节点是否相同（key与sel相同）
   - 不相同，删除旧内容，重新渲染
   - 相同，判断VNode是否有text，如果有text，而与oldVNode 的text不同 ，则更新test
-  - 如果新的VNode有children，判断子节点的差异，将差异更新到真实DOM
+  - 如果新的VNode有children，判断子节点的差异，仅将差异更新到真实DOM
     
 > diff过程只在同层级比较 
  
@@ -26,10 +26,15 @@
 
 ### 1、模拟 VueRouter 的 hash 模式的实现，实现思路和 History 模式类似，把 URL 中的 # 后面的内容作为路由的地址，可以通过 hashchange 事件监听路由地址的变化。
 
- 
+作业见 x-vue-router
+src/router/x-vue-router.js
 
 ### 2、在模拟 Vue.js 响应式源码的基础上实现 v-html 指令，以及 v-on 指令。
 
+作业见 minivue
+查看 index.html 的效果
  
-
 ### 3、参考 Snabbdom 提供的电影列表的示例，利用Snabbdom 实现类似的效果，如图：
+
+作业见 snabbdom-demo
+查看 index.html 的效果
